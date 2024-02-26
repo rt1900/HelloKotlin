@@ -1,3 +1,8 @@
+
+
+/* creating a program that will accept two integer -
+numbers and one operation from the user and give an answer */
+
 fun main(){
 
 println("Enter <<calc>> if you want to calculate numbers")
