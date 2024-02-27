@@ -8,6 +8,7 @@ fun main(){
 println("""Press the corresponding number to select the program
     |1 for Calculator
     |2 for Array of numbers
+    |3 for calculate the square of a number
 """.trimMargin())
 
 val userInput = readlnOrNull()
@@ -15,9 +16,26 @@ val userInput = readlnOrNull()
        {print(calculator())}
     else if(userInput == "2")
        {println(array())}
+    else if(userInput == "3")
+       {println(calculateSquare())}
     else{println("Яou chose the wrong number")}
 }
 
+
+fun calculateSquare(){
+
+    println("Write an integer number")
+    val userInput = readLine()
+    val a = userInput?.toIntOrNull()
+
+    if (a != null) {
+        println("Square of $a equals to ${a * a}")
+    } else {
+        println("Invalid input. Please enter an integer.")
+    }
+
+
+}
 
 fun array() {
 
