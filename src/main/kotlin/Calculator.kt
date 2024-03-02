@@ -5,7 +5,8 @@ println("""Enter the corresponding number to select the program
     |1.3 for Calculator 
     |2.2 for Array of numbers
     |2.3 for calculate the square of a number
-    |2.4 for to calculate the square of all numbers from 1 to the number you entered\n
+    |2.4 for to calculate the square of all numbers from 1 to the number you entered
+    |2.5 to call the list of names\n
 """.trimMargin())
 
 val userInput = readln()
@@ -17,12 +18,32 @@ val userInput = readln()
        {println(squareCalculationProgram())}
     else if(userInput == "2.4")
        {println(squareOfNumbersInLoop())}
+    else if(userInput=="2.5")
+       {println(mutableListOf())}
     else{println("You chose the wrong number") }
 }
 
 
+/* Task 2.2. GIVEN an array numbers with values [1, 2, 3, 4],
+WHEN you iterate through the array and print each element */
+fun array() {
 
-// A program for calculating the square of a number*
+    val numbers = arrayOf(1, 2, 3, 4)
+
+    for (x in numbers) {
+        println(x)
+    }
+}
+
+
+
+/*Task 2.3. function to calculate the square */
+fun squareCalculation(a : Int) {
+
+    println("Square of number $a is equal to ${a*a}")
+}
+
+// Task 2.3. A program for calculating the square of a number*
 fun squareCalculationProgram () {
 
     println("Write an integer number")
@@ -38,7 +59,7 @@ fun squareCalculationProgram () {
 
 
 
-/*GIVEN a loop that iterates from 1 to n,
+/*Task 2.4. GIVEN a loop that iterates from 1 to n,
 WHEN you get a user input,
 THEN print the square of each number in the loop*/
 fun squareOfNumbersInLoop(){
@@ -61,23 +82,22 @@ fun squareOfNumbersInLoop(){
 
 
 
-/*Task 2.3. function to calculate the square */
-fun squareCalculation(a : Int) {
+/* Task 2.5 Displaying the list of names,
+adding a name to the list,
+removing a name from the list,
+displaying the length of the list */
+fun mutableListOf(){
 
-    println("Square of number $a is equal to ${a*a}")
+    var names = mutableListOf("Alice", "Bob", "Charlie")
+    println(names)
+    names.add("David")
+    println(names)
+    names.remove("Alice")
+    println(names)
+    println(names.size)
+
 }
 
-
-/* Task 2.2. GIVEN an array numbers with values [1, 2, 3, 4],
-WHEN you iterate through the array and print each element */
-fun array() {
-
-    val numbers = arrayOf(1, 2, 3, 4)
-
-    for (x in numbers) {
-        println(x)
-    }
-}
 
 
 
