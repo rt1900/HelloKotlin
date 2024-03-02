@@ -7,6 +7,7 @@ println("""Enter the corresponding number to select the program
     |2.3 for calculate the square of a number
     |2.4 for to calculate the square of all numbers from 1 to the number you entered
     |2.5 to call the list of names\n
+    |2.6 to select the program for separating sentences into words
 """.trimMargin())
 
 val userInput = readln()
@@ -20,10 +21,12 @@ val userInput = readln()
        {println(squareOfNumbersInLoop())}
     else if(userInput=="2.5")
        {println(mutableListOf())}
+    else if((userInput=="2.6"))
+       {println(splitString())}
     else{println("You chose the wrong number") }
 }
 
-
+//-------------------------------------------------------------------------------------------------------
 /* Task 2.2. GIVEN an array numbers with values [1, 2, 3, 4],
 WHEN you iterate through the array and print each element */
 fun array() {
@@ -35,14 +38,13 @@ fun array() {
     }
 }
 
-
-
+//-------------------------------------------------------------------------------------------------------
 /*Task 2.3. function to calculate the square */
 fun squareCalculation(a : Int) {
 
     println("Square of number $a is equal to ${a*a}")
 }
-
+//-------------------------------------------------------------------------------------------------------
 // Task 2.3. A program for calculating the square of a number*
 fun squareCalculationProgram () {
 
@@ -57,8 +59,7 @@ fun squareCalculationProgram () {
     }
 }
 
-
-
+//-------------------------------------------------------------------------------------------------------
 /*Task 2.4. GIVEN a loop that iterates from 1 to n,
 WHEN you get a user input,
 THEN print the square of each number in the loop*/
@@ -79,9 +80,7 @@ fun squareOfNumbersInLoop(){
         squareOfNumbersInLoop()
     }
 
-
-
-
+//-------------------------------------------------------------------------------------------------------
 /* Task 2.5 Displaying the list of names,
 adding a name to the list,
 removing a name from the list,
@@ -95,12 +94,18 @@ fun mutableListOf(){
     names.remove("Alice")
     println(names)
     println(names.size)
-
+}
+//-------------------------------------------------------------------------------------------------------
+/* task 2.6 GIVEN a String sentence with the value "Hello World",
+WHEN you split the string into words,
+THEN the result SHOULD be ["Hello", "World"]*/
+fun splitString() {
+    val txt = "Hello World"
+    val wordList = txt.split(" ")
+    println(wordList)
 }
 
-
-
-
+//-------------------------------------------------------------------------------------------------------
 /* Task 1.3. Function for calculating two integers.
 *  The user should be able to perform addition, subtraction,
 * multiplication, and division operations using the calculator function*/
