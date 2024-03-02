@@ -1,30 +1,46 @@
 
-
-/* creating a program that will accept two integer -
-numbers and one operation from the user and give an answer */
-
 fun main(){
 
-println("""Press the corresponding number to select the program
-    |1 for Calculator
-    |2 for Array of numbers
-    |3 for calculate the square of a number
-    |4 for calculate the square of all numbers from 1 to "n"
+println("""Enter the corresponding number to select the program
+    |1.3 for Calculator 
+    |2.2 for Array of numbers
+    |2.3 for calculate the square of a number
+    |2.4 for to calculate the square of all numbers from 1 to the number you entered\n
 """.trimMargin())
 
-val userInput = readlnOrNull()
-    if (userInput == "1")
+val userInput = readln()
+    if (userInput == "1.3")
        {print(calculator())}
-    else if(userInput == "2")
+    else if(userInput == "2.2")
        {println(array())}
-    else if(userInput == "3")
-       {println(calculateSquare())}
-    else if(userInput == "4")
+    else if(userInput == "2.3")
+       {println(squareCalculationProgram())}
+    else if(userInput == "2.4")
        {println(squareOfNumbersInLoop())}
-    else{println("Яou chose the wrong number")}
+    else{println("You chose the wrong number") }
 }
 
 
+
+// A program for calculating the square of a number*
+fun squareCalculationProgram () {
+
+    println("Write an integer number")
+    val a = readLine()?.toIntOrNull()
+
+    if (a != null) {
+        println(squareCalculation(a))
+    } else {
+        println("Invalid input.")
+        squareCalculationProgram()
+    }
+}
+
+
+
+/*GIVEN a loop that iterates from 1 to n,
+WHEN you get a user input,
+THEN print the square of each number in the loop*/
 fun squareOfNumbersInLoop(){
 
     println("Enter an integer number to calculate the squares from 0 to the entered value")
@@ -34,27 +50,26 @@ fun squareOfNumbersInLoop(){
 
     if (n != null) {
         for(i in 1..n){
-            println(i*i)
+            println(squareCalculation(i))
         }
     }
     else
-        println("error")
+        {println("You entered an incorrect value")}
+        squareOfNumbersInLoop()
     }
 
-fun calculateSquare(){
 
-    println("Write an integer number")
-    val userInput2 = readLine()
-    val a = userInput2?.toIntOrNull()
 
-    if (a != null) {
-        println("Square of $a equals to ${a * a}")
-    } else {
-        println("Invalid input. Please enter an integer.")
-    }
 
+/*Task 2.3. function to calculate the square */
+fun squareCalculation(a : Int) {
+
+    println("Square of number $a is equal to ${a*a}")
 }
 
+
+/* Task 2.2. GIVEN an array numbers with values [1, 2, 3, 4],
+WHEN you iterate through the array and print each element */
 fun array() {
 
     val numbers = arrayOf(1, 2, 3, 4)
@@ -64,6 +79,11 @@ fun array() {
     }
 }
 
+
+
+/* Task 1.3. Function for calculating two integers.
+*  The user should be able to perform addition, subtraction,
+* multiplication, and division operations using the calculator function*/
 fun calculator()
 {    print ("""Please select an operation by entering the appropriate number:
     |1 for Addition
@@ -72,8 +92,13 @@ fun calculator()
     |4 for Division
     |Please enter number: """.trimMargin())
 
-    val operationNumber = readln().toInt()
-    println ("Enter the first Number:")
+    val operationNumber = readln()?.toIntOrNull()
+    if(operationNumber!=null){
+       println ("Enter the first Number:")}
+    else
+       {println("You have selected the wrong operation number")
+       calculator()}
+
     val firstnumber = readln().toInt()
     println ("Enter the second Number:")
     val secondnumber = readln().toInt()
