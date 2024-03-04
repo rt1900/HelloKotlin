@@ -8,6 +8,8 @@ println("""Enter the corresponding number to select the program
     |2.4 for to calculate the square of all numbers from 1 to the number you entered
     |2.5 to call the list of names\n
     |2.6 to select the program for separating sentences into words
+    |2.7 to get a get data of personA
+    |2.7.1 to get a get data of personB
 """.trimMargin())
 
 val userInput = readln()
@@ -23,6 +25,10 @@ val userInput = readln()
        {println(mutableListOf())}
     else if((userInput=="2.6"))
        {println(splitString())}
+    else if((userInput=="2.7"))
+       {println(class1())}
+    else if((userInput=="2.7.1"))
+    {println(dataclass())}
     else{println("You chose the wrong number") }
 }
 
@@ -104,6 +110,24 @@ fun splitString() {
     val wordList = txt.split(" ")
     println(wordList)
 }
+
+
+
+/*Create a Person class with name and age
+and give them the values John and 26*/
+fun class1() {
+
+    var personA = PersonA ("John", 26)
+    println("Name " + personA.name + " and age " + personA.age)
+}
+
+/*Create a Person data class with name and age
+and give them the values John and 26*/
+fun dataclass() {
+    var personb = PersonB ("John", 28)
+    println(personb)
+}
+
 
 //-------------------------------------------------------------------------------------------------------
 /* Task 1.3. Function for calculating two integers.
