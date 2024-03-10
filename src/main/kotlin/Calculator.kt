@@ -113,7 +113,7 @@ fun splitString() {
 
 
 
-/*Create a Person class with name and age
+/* task 2.7 Create a Person class with name and age
 and give them the values John and 26*/
 fun class1() {
 
@@ -121,9 +121,9 @@ fun class1() {
     println("Name " + personA.name + " and age " + personA.age)
 }
 
-/*Create a Person data class with name and age
+/* task 2.7.1 Create a Person data class with name and age
 and give them the values John and 26*/
-fun dataclass() {
+fun dataclass()
     var personb = PersonB ("John", 28)
     println(personb)
 }
