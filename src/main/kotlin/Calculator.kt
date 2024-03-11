@@ -10,6 +10,7 @@ println("""Enter the corresponding number to select the program
     |2.6 to select the program for separating sentences into words
     |2.7 to get a get data of personA
     |2.7.1 to get a get data of personB
+    |2.11.a to create a triangle.
 """.trimMargin())
 
 val userInput = readln()
@@ -29,6 +30,8 @@ val userInput = readln()
        {println(class1())}
     else if((userInput=="2.7.1"))
     {println(dataclass())}
+    else if((userInput=="2.11.a"))
+    {println(Triangle())}
     else{println("You chose the wrong number") }
 }
 
@@ -123,11 +126,32 @@ fun class1() {
 
 /* task 2.7.1 Create a Person data class with name and age
 and give them the values John and 26*/
-fun dataclass()
+fun dataclass(){
     var personb = PersonB ("John", 28)
     println(personb)
 }
 
+/* task 2.11a Given the user provides a positive integer input for the number of rows in the triangle,
+When the program is executed,
+Then the program should print a triangle in the console using for loops with the specified number of rows. */
+fun Triangle() {
+
+    println("How many lines do you want for the triangle? Enter a positive integer number")
+    val numberOfLines = readLine()?.toIntOrNull()
+
+    if(numberOfLines !=null && numberOfLines > 0) {
+
+        for (i in 0 until numberOfLines) {
+            for (k in 0 until numberOfLines - i)
+                 print(" ")
+            for (m in 0 until 2 * i + 1 )
+            print("*")
+            println()
+        }
+    } else
+            (println("Invalid user Input. Please use a positive integer"))
+    Triangle()
+}
 
 //-------------------------------------------------------------------------------------------------------
 /* Task 1.3. Function for calculating two integers.
